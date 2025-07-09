@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+
+  <!-- In the <head> tag -->
+
+
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+  <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/output.css')}}">
+  <style>
+    trix-editor figure.attacghment figcaption{
+        display: none;
+    }
+  </style>
+ 
+</head>
+<body class=" w-full bg-gray-100 text-gray-900">
+    <!-- Mobile toggle -->
+<div class="flex md:hidden  items-center justify-between px-4 py-3 bg-gray-900 text-white">
+   
+    <div class=" text-xl font-bold">Writer</div>
+    <button id="menu-toggle" class="focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+    </button>
+</div>
+<div class=" flex h-screen">
+    <aside id="sidebar" class="w-64 bg-gray-900 text-white flex-col hidden md:flex md:flex-col md:static absolute z-20 h-full top-0 left-0 transition-transform duration-300 ease-in-out transform -translate-x-full md:translate-x-0">
+        <a href="/home">
+            <div class="flex items-center gap-2">
+              <img src="{{url_for('static', filename='wolf.png')}}" class=" h-10 w-10" alt="logo">
+              <div>
+                <h1><span class="text-2xl font-bold text-white">STEEZY</span> <span class="text-[#00adb5] text-2xl ">FX</span><span class="text-sm font-bold text-gray-200">Writer</span></h1> 
+             
+              </div>
+              
+            </div>
+            </a>
+        <div class="p-4 text-2xl font-bold border-b border-gray-700"></div>
+        <nav class=" flex-1 p-4 space-y-2">
+            <a href="{{url_for('writers_dashboard')}}" class=" block p-2 rounded hover:bg-gray-800">Dashboard</a>
+            <a href="{{url_for('writers_blogs')}}" class=" block p-2 rounded hover:bg-gray-800">Blogs</a>
+            <a href="" class=" block p-2 rounded hover:bg-gray-800">Metrics</a>
+            <a href="" class=" block p-2 rounded hover:bg-gray-800">Settings</a>
+            <a href="{{url_for('logout')}}" class=" block p-2 rounded hover:bg-gray-800">Logout</a>
+           
+        </nav>
+        <div class=" p-4 border-t border-gray-700 text-sm"> &copy; 2025 SteezyFX</div>
+
+    </aside>
+
+    <!-- main Content -->
+    <main class="flex-1  overflow-y-scroll p-6 ">
+        
+        {% block content %}{% endblock %}
+    </main>
+</div>
+  
+  <script>
+    lucide.createIcons();
+  </script>
+  <script>
+      const toggleBtn = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+    
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('hidden');
+        sidebar.classList.toggle('-translate-x-full');
+      });
+  </script>
+  <script>
+    document.addEventListener("trix-attachment-add", function(event) {
+        const attachment = event.attachment;
+        if (attachment.file) {
+            uploadAttachment(attachment);
+        }
+    });
+    
+    function uploadAttachment(attachment) {
+        const file = attachment.file;
+        const form = new FormData();
+        form.append("file", file);
+    
+        fetch("/upload-image", {
+            method: "POST",
+            body: form
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.url) {
+                attachment.setAttributes({
+                    url: data.url
+                });
+            } else {
+                alert("Image upload failed.");
+            }
+        });
+    }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends './admin/base.html' %}
+{% block content %}
+<div class=" p-6 ">
+    <h1 class="text-3xl font-bold mb-6"> Add Tool</h1>
+
+    <form class="bg-white p-6 rounded-2xl shadow-md w-full max-w-md space-y-4" action="" method="post">
+        <label class="block text-gray-600 mb-1"  for=""> Tool Name
+            <input class=" w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5]" type="text"  name="name" required>
+        </label>
+        <label class="block text-gray-600 mb-1"  for="">Description
+            <input class=" w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5]" type="text"  name="description"  required>
+        </label>
+        <label class="block text-gray-600 mb-1"  for="">Url
+            <input class=" w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5]" type="text"  name="url"  required>
+        </label>
+        <label class="block text-gray-600 mb-1"  for=""> Lucide Icon Name
+            <input class=" w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5]" type="text"  name="lucide_icon"  required>
+        </label>
+        <label class="block text-gray-600 mb-1"  for="">Is Premium?
+            <input class=" form-checkbox" type="checkbox" name="is_premium" value="None">
+        </label>
+    
+       
+        
+        <button class=" w-full bg-[#00adb5] hover:bg-[#008c92] text-white font-bold py-2 px-4 rounded-lg transition duration-200 " type="submit"> Add Tool</button>
+        
+    </form>
+</div>
+{% endblock %}

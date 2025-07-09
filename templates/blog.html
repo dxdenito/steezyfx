@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block section %}
+<div class=" bg-gray-200 rounded-lg shadow p-4 ">
+<h1 class=" text-3xl font-bold"> Posts </h1>
+
+<div class="grid grid-cols-1 gap-4 md:grid-cols-[3fr_1fr]">
+    <div class="grid  grid-cols-1 ">
+        {% for post in posts %}
+    
+        
+            <div class="rounded flex gap-2 bg-white px-2 py-4 mb-2 shadow hover:shadow-2xl h-56">
+                <img class=" w-30 h-30 overflow-hidden" src="{{post.cover_img}}" alt="">
+               <a class="block" href="{{ url_for('view_post', slug=post.slug) }}">
+                 <p class="text-[#00adb5] text-3xl font-bold">{{ post.title }}</p>
+                 <p class="text-gray-300">{{post.excerpt}}</p>
+               </a>
+            </div>
+        
+        {% endfor %}
+
+    </div>
+    <div class="">
+        ads
+    </div>
+</div>
+</div>
+{% endblock %}

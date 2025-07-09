@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+{% block section %}
+    <div class="flex flex-col-reverse md:flex-row  h-fit mb-25">
+        <section class="w-full md:w-1/4 p-4 flex flex-col justify-end gap-10  ">
+          <blockquote class=" italic text-sm leading-snug text-gray-500 mb-6">Hunter S. Thompson’s line: 'I have a theory that the truth is never told during the nine-to-five hours.'</blockquote>
+           
+        </section>
+        <section class=" w-full justify-center md:w-1/4 p-4 ">
+            <img class=" h-52 w-52" src="{{url_for('static', filename='wolf.png')}}" alt="Lion Logo">
+        </section>
+            
+        <section class=" w-full p-4 text-left md:text-center flex flex-col max-w-xl md:w-2/4 justify-center">
+          <h2 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4"> Take Control of Your Trading Journey</h2>
+          <p class=" text-lg text-gray-600 mb-6">
+            Learn powerful trading strategies, sharpen your edge, and join a community of vision driven traders. Your growth starts here - Don't wait!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-15 ">
+            <a  class=" inline-flex w-full md:w-1/2 gap-2 px-6 py-3 bg-[#00adb5] justify-center md:justify-start text-white font-semibold rounded-lg shadow-md hover:bg-[#008c92] transition" href="#education"> <i data-lucide="rocket" class="w-5 h-5"></i> Start Learning Now</a>
+            <a  class=" inline-flex w-full md:w-1/2 gap-2 px-6 py-3 bg-white justify-center md:justify-start text-[#00adb5] font-semibold rounded-lg shadow-md hover:bg-[#008c92] hover:shadow-lg hover:text-white transition duration-200" href="#testimonials"> <i data-lucide="message-circle" class="w-5 h-5"></i> See What Traders Say</a>  
+          </div>
+        </section>
+    </div>
+    
+    <section>
+      <p class="text-center text-sm text-gray-400 mt-4">
+        Trusted by 300+ self-taught traders . 1200+ backtested trades logged
+      </p>
+    </section>
+  
+    <section id="about" class="about-section pt-20 bg-white rounded-lg mt-5 md:mt-24 shadow-sm " >
+      <h2>About Me</h2>
+      <center class="mb-10"><i data-lucide="user-round-search" class="w-20 h-20 justify-center"></i></center>
+      <p class="text-base text-gray-700 leading-relaxed mb-4">I’m a forex trader with a passion for growth, consistency, and leadership. This platform is where I document lessons, share tools, and build with a like-minded community. Join me as I navigate the markets and life with gratitude and purpose.</p>
+      <p class="text-base text-gray-700 leading-relaxed mb-4">“I will bring happiness to everyone around me, be the best leader, and set examples for others.” My mission statement reads, “My purpose is to inspire and set a higher standard for myself every day and encourage others to push themselves to reach their goals.” My three values are “commitment, gratitude, and determination.” I plan on using these statements, along with my three values to find my purpose everyday.</p>
+
+    </section>
+    <section id="education" class="education-section bg-white rounded-lg mt-10 shadow-sm ">
+      <h2>Education</h2>
+      <center class="mb-10"><i data-lucide="graduation-cap" class="w-20 h-20 justify-center"></i></center>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4"> Join Us Today!</h3>
+      <p class="text-base text-gray-700 leading-relaxed mb-4">Join us today at Steezy FX Academy to receive unmatched educational content. Study with us and watch us take you from zero to hero.</p>
+      <p class="text-base text-gray-700 leading-relaxed mb-4">When you join us you will gin a myriad of many benefits some of the benefits are :</p>
+      <ul>
+        <li>Access to worldclass educational content</li>
+        <li>Access to a wide variety of tools</li>
+        <li>Access to a real mentor </li>
+        <li>Access to weekly private review blogs and videos</li>
+        <li>Acess to daily market insights</li>
+      </ul>
+      <p class="text-base text-gray-700 leading-relaxed mb-4">Take the bold step and join us today!</p>
+      <a  class=" inline-flex gap-2 px-6 py-3 bg-[#00adb5] text-white font-semibold rounded-lg shadow-md hover:bg-[#008c92] transition" href="#"> <i data-lucide="rocket" class="w-5 h-5"></i> Enroll Now!</a>
+
+    </section>
+    <section id="testimonials" class="testimonials-section bg-white rounded-lg mt-10 shadow-sm ">
+      <h2>Testimonials</h2>
+      <center class="mb-10"><i data-lucide="message-circle-code" class="w-20 h-20 justify-center"></i></center>
+      <p class="text-base text-gray-700 leading-relaxed mb-4">Steezy is one of the best platforms to ever exist. It has brought about a huge wealth of value and information. <br> ~Denis Karanja</p>
+    </section>
+  
+    <section id="contact" class="contact-section bg-white rounded-lg mt-10 shadow-sm ">
+      <h2>Let’s Connect</h2>
+      <center class="mb-10"><i data-lucide="phone-call" class="w-20 h-20 justify-center"></i></center>
+      <p >Want to collaborate, chat about trading, or just say hey? Reach out below.</p>
+      <a class=" inline-flex gap-2 px-6 py-3 bg-[#00adb5] text-white font-semibold rounded-lg shadow-md hover:bg-[#008c92] transition" href="mailto:denixkaranjah@gmail.com" class="btn-primary"><i data-lucide="mail" class="w-5 h-5"></i>Email Me</a>
+    </section>
+{% endblock %}

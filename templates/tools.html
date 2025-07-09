@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{%block section %}
+
+<div class="grid grid-cols-2 gap-2 md:grid-cols-4">
+       
+        {% for tool in tools %}
+        <a href="{{url_for('render_tool', slug=tool.slug)}}"><div class="rounded flex items-center justify-center bg-white px-2 py-4 mb-2 shadow h-28">
+            <center><i data-lucide="{{tool.lucide_icon}}" class="w-10 h-10"></i></center>
+            <p class="text-[#00adb5]">{{tool.name}}</p>
+       </div></a>
+        {% endfor %}
+    
+</div>
+
+{% endblock %}

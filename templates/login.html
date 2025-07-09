@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block section %}
+<h2 class="text-2xl font-bold mb-4">Login</h2>
+<form method="POST" class="space-y-4">
+    <input name="email" type="email" placeholder="Email" required class="border p-2 w-full" />
+    <input name="password" type="password" placeholder="Password" required class="border p-2 w-full" />
+    <button class="bg-[#00adb5] text-white px-4 py-2 rounded" type="submit">Login</button>
+</form>
+{% endblock %}

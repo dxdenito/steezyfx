@@ -1,0 +1,12 @@
+{% extends "./writer/base.html" %}
+{% block content %}
+<h2 class="text-2xl font-bold mb-4">Write your blog here</h2>
+<form method="POST" class="space-y-4">
+    <input type="text" value="{{post.title}}" name="title" placeholder="Blog post Title goes here ..." class=" border p-2 w-full mb-2 ">
+    <!-- <textarea name="content" id="" rows="10" placeholder="Write your blog here" required class="border p-2 w-full mb-4 "></textarea> -->
+    <input type="hidden" id="content" value="{{post.content}}" class="border p-2 w-full" name="content">
+    
+    <trix-editor input="content" class="mb-4 trix-content bg-white border w-full p-2 rounded"></trix-editor>
+    <button class=" bg-[#00adb5] text-white px-4 py-2 rounded ">Publish</button>
+</form>
+{% endblock %}

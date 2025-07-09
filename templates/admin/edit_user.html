@@ -1,0 +1,17 @@
+{% extends './admin/base.html' %}
+{% block content %}
+
+<h2 class="text-2xl font-bold mb-4">Edit User</h2>
+<form method="POST" class="space-y-4">
+    <input name="username" placeholder="Username" value="{{ user.username }}" required class="border p-2 w-full" />
+    <input name="email" type="email" placeholder="Email" value="{{ user.email }}" required class="border p-2 w-full" />
+    <select class="border p-2 w-full" name="role"  id="">
+        <option value="admin" {% if user.role == 'admin' %} selected{% endif %}>Admin</option>
+        <option value="user"{% if user.role == 'user' %} selected{% endif %}>User</option>
+        <option value="writer"{% if user.role == 'writer' %} selected{% endif %}>Writer</option>
+        <option value="super_admin"{% if user.role == 'super_admin' %} selected{% endif %}>Super Admin</option>
+    </select>
+    <button class="bg-[#00adb5] text-white px-4 py-2 rounded" type="submit">Register</button>
+</form>
+
+{% endblock %}

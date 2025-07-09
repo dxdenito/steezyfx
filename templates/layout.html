@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/output.css')}}">
+    {% if title %}
+        <title>Steezy fx | {{title }}</title>
+    {% else %}
+        <title>Steezy fx</title>
+    {% endif %}
+</head>
+<body class=" w-full bg-gray-100 flex flex-col min-h-screen ">
+
+  <div id="tsparticles" class="fixed inset-0 -z-10 pointer-events-none  bg-gradient-to-br from-cyan-300 via-white to-blue-300 animate-gradient"></div>
+
+
+  <header class=" sticky top-0 z-50 bg-white/80 backdrop-blur-md py-5 flex items-center justify-between shadow-sm transition duration-300" >
+    <a href="/home">
+      <div class="flex items-center gap-2">
+        <img src="{{url_for('static', filename='wolf.png')}}" class=" h-10 w-10" alt="logo">
+        <div>
+          <h1><span class="text-2xl font-bold text-gray-800">STEEZY</span> <span class="text-[#00adb5] text-2xl ">FX</span></h1>
+        <p  class="text-sm text-gray-500">Trader | Leader | Visionary</p>
+        </div>
+        
+      </div>
+      </a>
+      <button  class="md:hidden" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+        <i data-lucide="menu" class="w-10 h-10"></i>
+      </button>
+    <nav class="hidden md:flex gap-6  w-1/2 items-end mr-3  justify-end  ">
+      
+      
+      <!-- <ul class="  items-center text-gray-700 font-medium"> -->
+        <a class=" hover:text-[#00adb5]" href="/#about">About Me</a>
+        
+        <div class=" relative group ">
+           <span class=" cursor-pointer hover:text-[#00adb5]" >Tools</span>
+       
+                <ul class=" absolute left-0 mt-0 px-2 bg-[#00adb5] text-gray-800 shadow-md rounded-md hidden group-hover:block w-44 z-10 ">
+                  <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92]  " href="{{url_for('render_tool',slug='forex_sessions')}}">Sessions</a></li> 
+               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92] " href="{{url_for('render_tool',slug='pip_value_calculator')}}">Pip value Calc</a></li> 
+               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92] " href="{{url_for('render_tool',slug='risk_calculator')}}">Risk Calc</a></li> 
+               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92] " href="{{url_for('render_tool',slug='economic_calendar')}}">Economic calendar</a></li> 
+               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92]" href="{{url_for('render_tool',slug='forex_co-relation')}}">Forex corelation</a></li> 
+               <li><a class="block px-4 text-sm text-white py-2 hover:bg-[#008c92]" href="{{url_for('tools')}}">more tools ...</a></li>
+                </ul>
+  
+         </div>
+        <a class=" hover:text-[#00adb5]" href="#journal">Journal</a>
+        <a class=" hover:text-[#00adb5]" href="#journal">Education</a>
+        <a class=" hover:text-[#00adb5]" href="{{url_for('blog')}}">blog</a>
+         {% if current_user.is_authenticated %}
+         <a href="{{ url_for('logout') }}">Logout</a>
+         {% else %}
+         <a class=" hover:text-[#00adb5]" href="{{ url_for('login') }}">Login</a>
+         <a class=" hover:text-[#00adb5]" href="{{ url_for('register') }}">Register</a>
+         {% endif %}
+
+      </nav>
+      
+     <!-- </ul> -->
+  <ul id="mobileMenu" class="hidden md:hidden px-4 py-4  w-full z-50 flex-col gap-3 bg-white">
+    <li><a class=" hover:text-[#00adb5]" href="/#about">About Me</a></li>
+    
+    <li>
+        
+            <span class=" cursor-pointer hover:text-[#00adb5]" onclick="document.getElementById('dropdn').classList.toggle('hidden')" >Tools</span>
+        
+         
+     
+        
+            <ul id="dropdn" class=" hidden  mt-0 px-2 bg-[#00adb5] text-gray-800 shadow-md rounded-md group-hover:block w-44 z-10 ">
+               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92]  " href="{{url_for('render_tool',slug='forex_sessions')}}">Sessions</a></li> 
+               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92] " href="{{url_for('render_tool',slug='pip_value_calculator')}}">Pip value Calc</a></li> 
+               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92] " href="{{url_for('render_tool',slug='risk_calculator')}}">Risk Calc</a></li> 
+               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92] " href="{{url_for('render_tool',slug='economic_calendar')}}">Economic calendar</a></li> 
+               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92]" href="{{url_for('render_tool',slug='forex_co-relation')}}">Forex corelation</a></li> 
+               <li><a class="block px-4 text-sm text-white py-2 hover:bg-[#008c92]" href="{{url_for('tools')}}">more tools ...</a></li>
+            </ul>
+            
+       
+        
+        
+    </li>
+    <li><a class=" hover:text-[#00adb5]" href="#journal">Journal</a></li>
+    <li><a class=" hover:text-[#00adb5]" href="#journal">Education</a></li>
+    <li><a class=" hover:text-[#00adb5]" href="{{url_for('blog')}}">blog</a></li>
+    {% if current_user.is_authenticated %}
+      <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+      <a class=" hover:text-[#00adb5]" href="{{ url_for('login') }}">Login</a>
+      <a class=" hover:text-[#00adb5]" href="{{ url_for('register') }}">Register</a>
+    {% endif %}
+
+  </ul>
+  </header>
+ 
+
+  <!-- <section class="w-full h-screen overflow-hidden bg-gradient-to-br from-cyan-300 via-white to-blue-300 animate-gradient"> -->
+  <div class="w-full px-2  mb-2 ">
+    {% block section %} {% endblock %}
+  </div>
+<!-- </section> -->
+<style>
+  @keyframes gradientshift {
+    0% { background-position: 0% 50%;}
+    50% { background-position: 100% 50%;}
+    100% { background-position: 0% 50%;}
+  }
+  .animate-gradient{
+    background-size: 400% 400%;
+    animation: gradientshift 15s ease infinite;
+  }
+</style>
+  <footer class=" bg-gray-200 text-center py-4 ">
+    <p>Follow me:</p>
+    <a class=" inline-flex gap-2 px-6 py-3 hover:underline text-gray-600 hover:text-[#00adb5]" href="#"> <i data-lucide="facebook" class=" w-5 h-5"></i> facebook</a>
+    <a class=" inline-flex gap-2 px-6 py-3 hover:underline text-gray-600 hover:text-[#00adb5]" href="#"> <i data-lucide="twitter" class=" w-5 h-5"></i> twitter</a>
+    <a class=" inline-flex gap-2 px-6 py-3 hover:underline text-gray-600 hover:text-[#00adb5]" href="#"> <i data-lucide="instagram" class=" w-5 h-5"></i> instagram</a>
+    <a class=" inline-flex gap-2 px-6 py-3 hover:underline text-gray-600 hover:text-[#00adb5]" href="#"> <i data-lucide="youtube" class=" w-5 h-5"></i> youtube</a>
+    <a class=" inline-flex gap-2 px-6 py-3 hover:underline text-gray-600 hover:text-[#00adb5]" href="#"> <i data-lucide="music" class=" w-5 h-5"></i> tiktok</a>
+  </footer>
+<script>
+  lucide.createIcons();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@1.18.11/dist/tsparticles.min.js"></script>
+<script>
+  tsParticles.load("tsparticles",{
+    background:{
+      color:"transparent"
+    },
+    particles: {
+      number:{value: 85},
+      size:{ value: 4},
+      move:{
+        enable: true,
+        speed: 1,
+        direction: "none",
+        straight: false
+      },
+      color:{value: "00adb5"},
+      opacity: {
+        value: 0.4,
+        random: true
+      },
+      links: {
+        enable: true,
+        distance: 100,
+        color: "#00adb5",
+        opacity: 0.35,
+        width:1
+      }
+    }
+  })
+</script>
+</body>
+</html>

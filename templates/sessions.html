@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block section %}
+    <h2>FOREX SESSION TRACKER</h2>
+    <p>Current UTC Time: <strong>{{ time }}</strong></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Session</th>
+                <th>Open</th>
+                <th>Close</th>
+                <th>Status</th>
+                <th>Focus pairs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for session in sessions %}
+            <tr>
+                <td>
+                    {{ session.name }}
+                </td>
+                <td>
+                    {{ session.open.strftime('%H:%M') }}
+                </td>
+                <td>
+                    {{ session.close.strftime('%H:%M') }}
+                </td>
+                <td class="{% if session.active %}active  {% else %} inactive {% endif %}">{% if session.active %}Active  {% else %} Inactive {% endif %}</td>
+                <td>{{session.pairs | join(',')}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

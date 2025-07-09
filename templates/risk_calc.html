@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block section %}
+<h2>Risk Management calculator</h2>
+
+<form class="bg-white p-6 rounded-2xl shadow-md w-full max-w-md space-y-4" action="" method="post">
+    <label class="block text-gray-600 mb-1"  for="">Account balance : $
+        <input class=" w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5]"  type="number" name="balance" step="0.1" required>
+    </label>
+
+    <label class="block text-gray-600 mb-1"  for="">Risk Per Trade : $
+        <input class=" w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5] " type="number" name="risk_percent" step="0.1" required>
+    </label>
+    
+    <label class="block text-gray-600 mb-1"  for="">Stop loss (pips) : 
+        <input class=" w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5] " type="number" name="stop_loss" step="0.1" required>
+    </label>
+    {% if result %}
+        <div class="results">
+            <p><strong>Lot size to use is : </strong> $ {{ result.lot_size }}</p>
+            <p><strong> Risked: </strong>$ {{ result.risk_dollars }}</p>
+        </div>
+    {% endif %}
+    <button class=" w-full bg-[#00adb5] hover:bg-[#008c92] text-white font-bold py-2 px-4 rounded-lg transition duration-200 " type="submit"> Calculate </button>
+    
+</form>
+
+{% endblock %}

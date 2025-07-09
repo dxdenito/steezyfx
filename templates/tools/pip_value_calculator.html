@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block section %} 
+<div class="bg-white shadow-xl rounded-xl p-8 w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center text-[#00adb5]">Pip Value Calculator</h2>
+    <form action="" class="space-y-4" method="post">
+        <div>
+            <label class=" block text-sm font-medium text-gray-700"> Currency Pair (e.g EURUSD)</label>
+            <input name="pair"  type="text" required class="mt-1 block w-full  border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5] shadow-sm">
+        </div>
+        <div>
+            <label class=" block text-sm font-medium text-gray-700"> Lot Size (e.g 0.01,0.1 )</label>
+            <input name="lot_size"  type="number" step="0.01" required class="mt-1 block w-full  border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5] shadow-sm">
+        </div>
+        <div>
+            <label class=" block text-sm font-medium text-gray-700"> Currency Price (e.g 1.1054)</label>
+            <input name="price"  type="number" step="0.0001" required class="mt-1 block w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5] shadow-sm">
+        </div>
+        <button type="submit" class="w-full bg-[#00adb] text-white py-2 rounded-md hover: bg-[#008c92]">Calculate</button>
+
+    </form>
+    {% if result %}
+        <div class=" mt-6 p-4 bg-green-100 rounded-lg text-green-800 text-center">
+            <p> 1 Pip = <strong> $ {{ result }} </strong> </p>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}   
+            
