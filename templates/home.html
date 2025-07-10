@@ -1,63 +1,282 @@
 {% extends 'layout.html' %}
 {% block section %}
-    <div class="flex flex-col-reverse md:flex-row  h-fit mb-25">
-        <section class="w-full md:w-1/4 p-4 flex flex-col justify-end gap-10  ">
-          <blockquote class=" italic text-sm leading-snug text-gray-500 mb-6">Hunter S. Thompson’s line: 'I have a theory that the truth is never told during the nine-to-five hours.'</blockquote>
-           
-        </section>
-        <section class=" w-full justify-center md:w-1/4 p-4 ">
-            <img class=" h-52 w-52" src="{{url_for('static', filename='wolf.png')}}" alt="Lion Logo">
-        </section>
-            
-        <section class=" w-full p-4 text-left md:text-center flex flex-col max-w-xl md:w-2/4 justify-center">
-          <h2 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4"> Take Control of Your Trading Journey</h2>
-          <p class=" text-lg text-gray-600 mb-6">
-            Learn powerful trading strategies, sharpen your edge, and join a community of vision driven traders. Your growth starts here - Don't wait!
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-15 ">
-            <a  class=" inline-flex w-full md:w-1/2 gap-2 px-6 py-3 bg-[#00adb5] justify-center md:justify-start text-white font-semibold rounded-lg shadow-md hover:bg-[#008c92] transition" href="#education"> <i data-lucide="rocket" class="w-5 h-5"></i> Start Learning Now</a>
-            <a  class=" inline-flex w-full md:w-1/2 gap-2 px-6 py-3 bg-white justify-center md:justify-start text-[#00adb5] font-semibold rounded-lg shadow-md hover:bg-[#008c92] hover:shadow-lg hover:text-white transition duration-200" href="#testimonials"> <i data-lucide="message-circle" class="w-5 h-5"></i> See What Traders Say</a>  
-          </div>
-        </section>
-    </div>
-    
-    <section>
-      <p class="text-center text-sm text-gray-400 mt-4">
-        Trusted by 300+ self-taught traders . 1200+ backtested trades logged
-      </p>
-    </section>
-  
-    <section id="about" class="about-section pt-20 bg-white rounded-lg mt-5 md:mt-24 shadow-sm " >
-      <h2>About Me</h2>
-      <center class="mb-10"><i data-lucide="user-round-search" class="w-20 h-20 justify-center"></i></center>
-      <p class="text-base text-gray-700 leading-relaxed mb-4">I’m a forex trader with a passion for growth, consistency, and leadership. This platform is where I document lessons, share tools, and build with a like-minded community. Join me as I navigate the markets and life with gratitude and purpose.</p>
-      <p class="text-base text-gray-700 leading-relaxed mb-4">“I will bring happiness to everyone around me, be the best leader, and set examples for others.” My mission statement reads, “My purpose is to inspire and set a higher standard for myself every day and encourage others to push themselves to reach their goals.” My three values are “commitment, gratitude, and determination.” I plan on using these statements, along with my three values to find my purpose everyday.</p>
+<!-- hero section -->
+<section class=" w-full p-4 text-left md:text-center py-20 text-centerr">
+  <h2 class="text-5xl font-bold text-gray-800 mb-4"> Take Control of Your Trading Journey</h2>
+  <p class=" text-lg sm:text-xl max-w-2xl mx-auto mb-8 text-gray-600 " ">
+    Learn powerful trading strategies, Get access to free top-notch tools, and join a community of vision driven traders. Your growth starts here - Don't wait!
+  </p>
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <a  class=" inline-flex   gap-2 px-6 py-3 bg-[#00adb5] justify-center md:justify-start text-white font-semibold rounded-lg shadow-md hover:bg-[#008c92] transition" href="#ed-section"> <i data-lucide="rocket" class="w-5 h-5"></i> Start Learning Now</a>
+    <a  class=" inline-flex   gap-2 px-6 py-3 bg-white justify-center md:justify-start text-[#00adb5] font-semibold rounded-lg shadow-md hover:bg-[#008c92] hover:shadow-lg hover:text-white transition duration-200" href="#tools-section"> <i data-lucide="message-circle" class="w-5 h-5"></i> Explore Tools</a>  
+  </div>
+</section>
+<section class="mb-4 md:mb-36">
+  <p class="text-center text-sm text-gray-400 mt-4">
+    Trusted by 300+ self-taught traders . 1200+ backtested trades logged
+  </p>
+</section>
 
-    </section>
-    <section id="education" class="education-section bg-white rounded-lg mt-10 shadow-sm ">
-      <h2>Education</h2>
-      <center class="mb-10"><i data-lucide="graduation-cap" class="w-20 h-20 justify-center"></i></center>
-      <h3 class="text-2xl font-bold text-gray-800 mb-4"> Join Us Today!</h3>
-      <p class="text-base text-gray-700 leading-relaxed mb-4">Join us today at Steezy FX Academy to receive unmatched educational content. Study with us and watch us take you from zero to hero.</p>
-      <p class="text-base text-gray-700 leading-relaxed mb-4">When you join us you will gin a myriad of many benefits some of the benefits are :</p>
-      <ul>
-        <li>Access to worldclass educational content</li>
-        <li>Access to a wide variety of tools</li>
-        <li>Access to a real mentor </li>
-        <li>Access to weekly private review blogs and videos</li>
-        <li>Acess to daily market insights</li>
+<!-- About section -->
+<!-- <section class="bg-white py-16">
+  <div class="container mx-auto px-4 max-w-4xl text-center">
+    <h2 class=" text-2xl font-bold text-gray-800 mb-6 border-b-2 border-b-[#00adb5]"> Why SteezyFX?</h2>
+    <center class="mb-10"><i data-lucide="message-circle-question-mark" class="w-20 h-20 justify-center"></i></center>
+    <p class=" text-gray-600 leading-relaxed text-lg">SteezyFx is a self-built platform by a trader and developer who understands what real execution demands.
+      Whether you're managing risks, backtesting strategies, or learning forex concepts - this is your one-stop edge.
+    </p>
+
+  </div>
+</section> -->
+<section class="bg-white text-[#222] py-12 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-10">Why Traders Choose Us</h2>
+
+    <div class="grid md:grid-cols-3 gap-8 text-left">
+      <!-- Feature 1 -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+        <div class="bg-[#00adb5] p-3 rounded-full inline-block mb-4">
+          <i data-lucide="activity" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Precision Tools</h3>
+        <p class="text-sm text-gray-700">
+          From pip value to position size; every tool is built for speed, accuracy, and clarity.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+        <div class="bg-[#00adb5] p-3 rounded-full inline-block mb-4">
+          <i data-lucide="book-open-check" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Education That Matters</h3>
+        <p class="text-sm text-gray-700">
+          Learn strategies, risk management, and structure; no fluff, just growth.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+        <div class="bg-[#00adb5] p-3 rounded-full inline-block mb-4">
+          <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Built by Traders</h3>
+        <p class="text-sm text-gray-700">
+          Created by real traders for real results, every feature solves a real trading pain point.
+        </p>
+      </div>
+    </div>
+
+    <!-- Optional Testimonial -->
+    <div class="mt-10 max-w-3xl mx-auto text-center italic text-gray-600">
+      “This platform gave me clarity and confidence in my trades. The tools are insanely accurate.”<br />
+      <span class="not-italic font-semibold text-[#222] block mt-2">— Alex M., Funded Trader</span>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="mt-8">
+      <a href="#testimonials"
+         class="inline-flex items-center gap-2 bg-[#00adb5] hover:bg-[#009aa3] text-white px-6 py-3 rounded-lg font-medium transition">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        Trader Voices
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- featured Tools -->
+<section id="tools-section" class="bg-gray-50 py-16">
+  <div class=" container mx-auto px-4 ">
+    <h2 class=" text-2xl font-bold text-center text-gray-800 mb-10"> Popular Tools</h2>
+    <div class=" grid grid-cols-1 gap-6 sm:grid-cols-2 leading-relaxed mb-6 lg:grid-cols-3 ">
+      <!-- card -->
+      <div class="max-w-md mx-auto bg-white rounded-2xl shadow-md hover:shadow-[0_10px_20px_#00adb54D]  p-6 border border-gray-100 transition-transform transform ease-in-out hover:scale-105 duration-300">
+        <div class="flex items-start justify-between">
+          <div class="block  gap-3">
+            <div class="bg-teal-100 w-fit p-2 rounded-lg h-fit">
+              <i data-lucide="calculator" class="w-6 h-6 text-teal-600"></i>
+            </div>
+            <div >
+              <h2 class=" text-lg font-semibold to-gray-800"> Forex  Risk Calculator</h2>
+              <p class=" text-sm text-gray-600">Protect Your trading capital,Manage your risk</p>
+            </div>
+          </div>
+          <span class=" text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 font-medium"> Essential</span>
+        </div>
+          <ul class="mt-4 space-y-1 text-sm marker:text-teal-500 text-gray-700 list-disc list-inside">
+            <li>% Risk</li>
+            <li>Amount to risk</li>
+            <li>Pips to risk</li>
+          </ul>
+          <div class="mt-6">
+            <a href="{{url_for('render_tool',slug='risk_calculator')}}" class=" inline-block px-4 py-2 border border-teal-500 text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition">Try Now</a>
+          </div>
+      </div>
+      <div class="max-w-md mx-auto bg-white rounded-2xl shadow-md hover:shadow-[0_10px_20px_#00adb54D]  p-6 border border-gray-100 transition-transform transform ease-in-out hover:scale-105 duration-300">
+        <div class="flex items-start justify-between">
+          <div class="block  gap-3">
+            <div class="bg-teal-100 w-fit p-2 rounded-lg h-fit">
+              <i data-lucide="calculator" class="w-6 h-6 text-teal-600"></i>
+            </div>
+            <div >
+              <h2 class=" text-lg font-semibold to-gray-800"> Forex Sessions</h2>
+              <p class=" text-sm text-gray-600"> Trade at the right time in the right seesion,Be in the know!</p>
+            </div>
+          </div>
+          <span class=" text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 font-medium"> Essential</span>
+        </div>
+          <ul class="mt-4 space-y-1 text-sm marker:text-teal-500 text-gray-700 list-disc list-inside">
+            <li>New York Session</li>
+            <li>London Session</li>
+            <li>Assian session</li>
+          </ul>
+          <div class="mt-6">
+            <a href="{{url_for('render_tool',slug='forex_sessions')}}" class=" inline-block px-4 py-2 border border-teal-500 text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition">Try Now</a>
+          </div>
+      </div>
+      <div class="max-w-md mx-auto bg-white rounded-2xl shadow-md hover:shadow-[0_10px_20px_#00adb54D]  p-6 border border-gray-100 transition-transform transform ease-in-out hover:scale-105 duration-300">
+        <div class="flex items-start justify-between">
+          <div class="block  gap-3">
+            <div class="bg-teal-100 w-fit p-2 rounded-lg h-fit">
+              <i data-lucide="calculator" class="w-6 h-6 text-teal-600"></i>
+            </div>
+            <div >
+              <h2 class=" text-lg font-semibold to-gray-800"> Economic calendar</h2>
+              <p class=" text-sm text-gray-600">Jerom Powell is talking? Be in the know!</p>
+            </div>
+          </div>
+          <span class=" text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 font-medium"> Essential</span>
+        </div>
+          <ul class="mt-4 space-y-1 text-sm marker:text-teal-500 text-gray-700 list-disc list-inside">
+            <li>Red folder news</li>
+            <li>Bank holiday</li>
+            <li>Major events</li>
+          </ul>
+          <div class="mt-6">
+            <a href="{{url_for('render_tool',slug='economic_calendar')}}" class=" inline-block px-4 py-2 border border-teal-500 text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition">Try Now</a>
+          </div>
+      </div>
+      </div>
+      <div class="w-full flex items-center justify-center">
+        <a  class=" inline-flex  gap-2 px-6 py-3 bg-[#00adb5] text-white font-semibold rounded-lg shadow-md hover:bg-[#008c92] transition" href="{{url_for('tools')}}"> <i data-lucide="rocket" class="w-5 h-5"></i> Explore more free Tools.</a>
+      </div>
+</section>
+
+<section class=" bg-[#222] text-white py-20 text-center">
+  <div class=" container mx-auto px-4">
+    <h1 class="text-4xl font-bold text-[#00adb5] mb-4">Master Forex. Build Tools. Dominate markets.</h1>
+    <h3 class="text-2xl  text-white mb-4"> Tools .  Education . Mastery</h3>
+    <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8 text-gray-50 "> SteezyFX empowers traders with precision-built tools and battle-tested educational resources.
+       whether you're sizing your trades or refining your forex concepts, this is your growth zone.</p>
+       <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">How It Works</h2>
+    
+        <!-- Steps Grid -->
+        <div class="grid md:grid-cols-3 gap-8 text-left">
+          
+          <!-- Step 1 -->
+          <div class="flex flex-col items-start bg-[#2c2c2c] p-6 rounded-xl shadow-md">
+            <div class="bg-[#00adb5] p-3 rounded-full mb-4">
+              <i data-lucide="user-plus" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl  font-semibold mb-2">Step 1: Register</h3>
+            <p class="text-sm text-gray-300">
+              Create a free account to get started with our suite of Forex tools.
+            </p>
+          </div>
+    
+          <!-- Step 2 -->
+          <div class="flex flex-col items-start bg-[#2c2c2c] p-6 rounded-xl shadow-md">
+            <div class="bg-[#00adb5] p-3 rounded-full mb-4">
+              <i data-lucide="folder-open" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Step 2: Access Premium Tools</h3>
+            <p class="text-sm text-gray-300">
+              Unlock calculators, strategy tools, and educational content tailored for your trading growth.
+            </p>
+          </div>
+    
+          <!-- Step 3 -->
+          <div class="flex flex-col items-start bg-[#2c2c2c] p-6 rounded-xl shadow-md">
+            <div class="bg-[#00adb5] p-3 rounded-full mb-4">
+              <i data-lucide="rocket" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Step 3: Succeed</h3>
+            <p class="text-sm text-gray-300">
+              Stay consistent, use your tools wisely, and take your trading to the next level.
+            </p>
+          </div>
+        </div>
+    
+        <!-- CTA Buttons -->
+       
+      </div>
+    <div class="flex flex-col mt-5 sm:flex-row items-center justify-center gap-4">
+    <a href="#tools-section" class=" bg-[#00adb5] text-white px-6 py-3 rounded-lg shadow hover:bg-teal-600 transition"> Explore Tools</a>
+    <a href="#ed-section" class=" bg-[#00adb5] text-white px-6 py-3 rounded-lg shadow hover:bg-teal-600 transition"> Enroll today</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Education section -->
+<section id="ed-section" class="bg-[#00adb5]  py-16 text-center text-white">
+  <div class="container mx-auto px-4 max-w-4xl text-left">
+  <h2 class=" text-2xl text-center font-bold text-white "> Education Hub</h2>
+  <center class="mb-2"><i data-lucide="graduation-cap" class="w-20 h-20 text-white justify-center"></i></center>
+  
+  <p class="text-base text-center leading-relaxed mb-10 max-w-2xl mx-auto">Get access to powerful tools and educational resources.Join us today at Steezy FX Academy to receive unmatched educational content. Study with us and watch us take you from zero to hero.</p>
+    
+  
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 leading-relaxed lg:grid-cols-2">
+    <div class="max-w-md mx-auto bg-gray-50 rounded-2xl shadow-md hover:shadow-[0_10px_20px_#00adb54D]  p-6 border border-gray-100 transition-transform transform ease-in-out hover:scale-105 duration-300">
+      <h2 class=" text-3xl text-center text-[#00adb5] font-bold mb-4">Join the Movement!</h2>
+      
+      <ul class="mt-4 space-y-1 text-sm marker:text-teal-500  block text-left mb-4 text-gray-700 list-disc list-inside">
+        <li>Access to worldclass educational content.</li>
+        <li>Access premium tools e.g signal and risk management tools.</li>
+        <li>Access to a real mentor. </li>
+        <li>Access to weekly private review blogs and videos.</li>
+        <li>Acess to daily market insights.</li>
       </ul>
       <p class="text-base text-gray-700 leading-relaxed mb-4">Take the bold step and join us today!</p>
-      <a  class=" inline-flex gap-2 px-6 py-3 bg-[#00adb5] text-white font-semibold rounded-lg shadow-md hover:bg-[#008c92] transition" href="#"> <i data-lucide="rocket" class="w-5 h-5"></i> Enroll Now!</a>
+      <div class="flex items-center justify-center">
+        <a  class=" inline-flex  gap-2 px-6 py-3 bg-[#00adb5] text-white font-semibold rounded-lg shadow-md hover:bg-[#008c92] transition" href="{{url_for('user_dashboard')}}"> <i data-lucide="rocket" class="w-5 h-5"></i> Enroll Now!</a>
+      </div>
+    </div>
+    <div class="max-w-md mx-auto text-white bg-[#00adb5] rounded-2xl shadow-sm hover:shadow-[0_10px_20px_#00adb54D]  p-6 border border-gray-100 transition-transform transform ease-in-out hover:scale-105 duration-300">
+      <h2 class=" text-3xl text-center font-bold mb-4">Become a Tutor.</h2>
+      
+      <ul class="mt-4 space-y-1 text-sm marker:text-gray-50 block text-left mb-4 list-disc list-inside">
+        <li>Access to huge student community.</li>
+        <li>Competitive incentives.</li>
+        <li>Become a mentor. </li>
+        <li>Free access to weekly private review blogs and videos.</li>
+        <li>Acess to daily market insights.</li>
+        <li>And much more ...</li>
+      </ul>
+      <p class="text-base leading-relaxed mb-4">Take the bold step and educate us today!</p>
+      <div class="flex items-center justify-center">
+        <a  class=" inline-flex  gap-2 px-6 py-3 bg-gray-50 text-[#00adb5] font-semibold rounded-lg shadow-md hover:bg-gray-100 transition" href="#"> <i data-lucide="rocket" class="w-5 h-5"></i> Apply as a Tutor!</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
-    </section>
-    <section id="testimonials" class="testimonials-section bg-white rounded-lg mt-10 shadow-sm ">
-      <h2>Testimonials</h2>
+
+
+  
+    <section  class="bg-white  text-center py-16">
+      <h2 class=" text-2xl font-bold text-gray-800 mb-6 border-b-2 border-b-[#00adb5]">Trusted by thousands of traders.</h2>
       <center class="mb-10"><i data-lucide="message-circle-code" class="w-20 h-20 justify-center"></i></center>
       <p class="text-base text-gray-700 leading-relaxed mb-4">Steezy is one of the best platforms to ever exist. It has brought about a huge wealth of value and information. <br> ~Denis Karanja</p>
     </section>
   
-    <section id="contact" class="contact-section bg-white rounded-lg mt-10 shadow-sm ">
+    <section id="contact" class="contact-section bg-white  ">
       <h2>Let’s Connect</h2>
       <center class="mb-10"><i data-lucide="phone-call" class="w-20 h-20 justify-center"></i></center>
       <p >Want to collaborate, chat about trading, or just say hey? Reach out below.</p>

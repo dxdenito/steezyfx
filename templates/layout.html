@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
@@ -38,14 +38,14 @@
       
       
       <!-- <ul class="  items-center text-gray-700 font-medium"> -->
-        <a class=" hover:text-[#00adb5]" href="/#about">About Me</a>
+        <a class=" hover:text-[#00adb5] hover:shadow" href="/#about">About Me</a>
         
         <div class=" relative group ">
            <span class=" cursor-pointer hover:text-[#00adb5]" >Tools</span>
        
                 <ul class=" absolute left-0 mt-0 px-2 bg-[#00adb5] text-gray-800 shadow-md rounded-md hidden group-hover:block w-44 z-10 ">
                   <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92]  " href="{{url_for('render_tool',slug='forex_sessions')}}">Sessions</a></li> 
-               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92] " href="{{url_for('render_tool',slug='pip_value_calculator')}}">Pip value Calc</a></li> 
+               <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92]  " href="{{url_for('render_tool',slug='pip_value_calculator')}}">Pip value Calc</a></li> 
                <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92] " href="{{url_for('render_tool',slug='risk_calculator')}}">Risk Calc</a></li> 
                <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92] " href="{{url_for('render_tool',slug='economic_calendar')}}">Economic calendar</a></li> 
                <li><a  class="block px-4 text-sm text-white py-2 hover:bg-[#008c92]" href="{{url_for('render_tool',slug='forex_co-relation')}}">Forex corelation</a></li> 
@@ -104,7 +104,7 @@
  
 
   <!-- <section class="w-full h-screen overflow-hidden bg-gradient-to-br from-cyan-300 via-white to-blue-300 animate-gradient"> -->
-  <div class="w-full px-2  mb-2 ">
+  <div class="w-full   ">
     {% block section %} {% endblock %}
   </div>
 <!-- </section> -->

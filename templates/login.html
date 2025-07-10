@@ -1,9 +1,19 @@
 {% extends "layout.html" %}
 {% block section %}
-<h2 class="text-2xl font-bold mb-4">Login</h2>
-<form method="POST" class="space-y-4">
-    <input name="email" type="email" placeholder="Email" required class="border p-2 w-full" />
-    <input name="password" type="password" placeholder="Password" required class="border p-2 w-full" />
-    <button class="bg-[#00adb5] text-white px-4 py-2 rounded" type="submit">Login</button>
-</form>
+<div class="max-w-sm mx-auto bg-white rounded-2xl shadow-md hover:shadow-[0_10px_20px_#00adb54D]  p-2 border border-gray-100 m-5">
+    <div class="flex items-center justify-center">
+        
+        <form method="POST" class="space-y-4">
+            <h2 class="text-2xl text-center font-bold mb-4">Login</h2>
+            <input name="email" type="email" placeholder="Email" required class="border p-2 w-full mt-1 block  border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5] shadow-sm" />
+            <input name="password" type="password" placeholder="Password" required class="border p-2 w-full mt-1 block  border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#00adb5] shadow-sm" />
+            <button class="bg-[#00adb5] w-full  align-middle text-white px-4 py-2 rounded" type="submit">Login</button>
+        </form>
+        
+    </div>
+    <div class="mt-2 mb-2">
+       <p class="text-sm text-gray-600 text-center">Don't have an account? <a href="{{url_for('register')}}" class="text-[#00adb5] font-semibold">Sign up here.</a> </p>
+    </div>
+    
+</div>
 {% endblock %}
